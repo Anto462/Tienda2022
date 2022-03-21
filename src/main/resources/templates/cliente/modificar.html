@@ -2,16 +2,18 @@
 <html xmls:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>TechShop</title>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8"/>
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header" ></header>
+        <div class="contenido">
         <h2>Datos de cliente</h2>
         
         <a th:href="@{/}">
             Regresar
         </a>
-        <form th:action="@{/guardarCliente}" method="post" th:object="${cliente}">
+        <form th:action="@{/cliente/guardar}" method="post" th:object="${cliente}">
             
             <input type="hidden" name="idCliente" th:field="*{idCliente}" />
             
@@ -31,9 +33,15 @@
             <input type="tel" name="telefono" th:field="*{telefono}" />
             <br/>
             
+            <label for="nombre">Limite de credito: </label>
+            <input type="number" name="limite" th:field="*{credito.limite}" />
+            <br/>
+            
+            
             <input type="submit" name="guardar" value="Guardar"  />
             
         </form>
+        </div>
         <footer th:replace="layout/plantilla :: footer" ></footer>
     </body>
 </html>
