@@ -8,16 +8,16 @@
     <body>
         <header th:replace="layout/plantilla :: header" ></header>
         <div class="contenido">
-        <h2>Datos de articulo</h2>
+        <h2 th:text="#{articulo.datos}">Datos de articulo</h2>
         
-        <a th:href="@{/}">
+        <a th:href="@{/}" th:text="#{accion.regresar}">
             Regresar
         </a>
         <form th:action="@{/articulo/guardar}" method="post" th:object="${articulo}">
             
             <input type="hidden" name="idArticulo" th:field="*{idArticulo}" />
             
-            <label for="categoria">Categoria: </label>
+            <label for="categoria" th:text="#{articulo.categoria}">Categoria: </label>
             <select th:field="*{idCategoria}">
                 <option th:each="categoria: ${categorias}"
                         th:value ="${categoria.idCategoria}"
@@ -26,27 +26,27 @@
 
             <br/>
              
-            <label for="descripcion">Descripcion: </label>
+            <label for="descripcion" th:text="#{articulo.descripcion}">Descripcion: </label>
             <input type="text" name="descripcion" th:field="*{descripcion}" />
             <br/>
             
-            <label for="detalle">Detalle: </label>
+            <label for="detalle" th:text="#{articulo.detalle}">Detalle: </label>
             <textArea name="detalle" th:field="*{detalle}" rows="6" cols="50">
             <br/>
             
-            <label for="precio">Precio: </label>
+            <label for="precio" th:text="#{articulo.precio}">Precio: </label>
             <input type="number" name="precio" th:field="*{precio}" />
             <br/>
             
-            <label for="existencias">Existencias: </label>
+            <label for="existencias" th:text="#{articulo.existencias}">Existencias: </label>
             <input type="number" name="existencias" th:field="*{existencias}" />
             
-            <label for="activo">Activo: </label>
+            <label for="activo" th:text="#{articulo.activo}">Activo: </label>
             <input type="checkbox" name="activo" th:field="*{activo}" />
             <br/>
             
             
-            <input type="submit" name="guardar" value="Guardar"  />
+            <input type="submit" name="guardar" th:text="#{accion.guardar}" />
             
         </form>
         </div>
