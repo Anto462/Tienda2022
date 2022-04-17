@@ -96,11 +96,11 @@
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label for="descripcion" th:text="#{categoria.descripcion}">Descripcion: </label>
-                                    <input type="text" class="form-control" name="descriocione" required="true">
+                                    <input type="text" class="form-control" name="descripcion" required="true">
                                 </div>
                                 <div class="form-group">
                                     <label for="activo" th:text="#{categoria.activo}">Activo: </label>
-                                    <input type="checkbox" class="form-control" name="activo" required="true"/>
+                                    <input type="checkbox" class="form-control" name="activo"/>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -157,11 +157,11 @@
                                     <div class="card-body">
                                     <div class="form-group">
                                     <label for="descripcion" th:text="#{categoria.descripcion}">Descripcion: </label>
-                                    <input type="text" name="descripcion" th:field="*{descripcion}" />
+                                    <input type="text" class="form-control" name="descripcion" th:field="*{descripcion}" />
                                      </div>
                                     <div class="form-group">
                                      <label for="activo" th:text="#{categoria.activo}">Activo: </label>
-                                    <input type="checkbox" name="activo" th:field="*{activo}" />
+                                    <input type="checkbox" class="form-control" name="activo" th:field="*{activo}" />
                                     </div>                   
                                     </div>
                                 </div>
